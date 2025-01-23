@@ -45,27 +45,33 @@ form.addEventListener("submit", (e) => {
 
     setTimeout(() => {
         // Validate credentials
-        if (userDatabase[username] && userDatabase[username].password === password && userDatabase[username].securityCode === securityCode) {
-            // Successful login
-            feedbackMessage.textContent = 'Login Successful! Redirecting...';
-            feedbackMessage.classList.remove('error');
-            feedbackMessage.classList.add('success');
-            feedbackMessage.style.display = "block";
+        if (username in userDatabase) {
+            const user = userDatabase[username];
+            if (user.password === password && user.securityCode === securityCode) {
+                // Successful login
+                feedbackMessage.textContent = 'Login Successful! Redirecting...';
+                feedbackMessage.classList.remove('error');
+                feedbackMessage.classList.add('success');
+                feedbackMessage.style.display = "block";
 
-            setTimeout(() => {
-                const redirectURL = userDatabase[username].redirectURL; // Get the custom redirect URL
-                window.location.href = redirectURL; // Redirect to the specified URL
-            }, 2000);
+                setTimeout(() => {
+                    window.location.href = user.redirectURL; // Redirect to the specified URL
+                }, 2000);
+            } else {
+                // Invalid password or security code
+                errorMessage.textContent = 'Invalid username, password, or security code!';
+                errorMessage.style.display = "block";
+            }
         } else {
-            // Invalid credentials
+            // Invalid username
             errorMessage.textContent = 'Invalid username, password, or security code!';
             errorMessage.style.display = "block";
-
-            // Reset button to original state
-            btn.disabled = false;
-            btn.classList.remove('loading');
-            btnText.textContent = 'Login';
-            btnSpinner.classList.add('hidden');
         }
+
+        // Reset button to original state
+        btn.disabled = false;
+        btn.classList.remove('loading');
+        btnText.textContent = 'Login';
+        btnSpinner.classList.add('hidden');
     }, 2000); // Adjust delay as needed
 });
