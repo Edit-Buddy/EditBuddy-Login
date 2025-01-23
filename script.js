@@ -11,7 +11,7 @@ const userDatabase = {
     "hlmm": {
         password: "5692",
         securityCode: "2415",
-        redirectURL: "https://editbuddy.co.za/hlmm-dashboard" // Custom redirect URL for HLMM
+        redirectURL: "https://edit-buddy.github.io/HLMM/" // Custom redirect URL for HLMM
     },
     "jane.smith": {
         password: "abcd",
