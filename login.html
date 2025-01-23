@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logging Out - EditBuddy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://i.ibb.co/6nqLvXs/EDITBUDDY-3-removebg-preview.png" type="image/png"> <!-- Favicon -->
+    <style>
+        /* Centered Message Styling */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f7f8fa;
+            color: #333;
+        }
+
+        .logout-message {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="logout-message">
+        Logging you out...
+    </div>
+    <script>
+        // Redirect to the correct path for login.html
+        setTimeout(() => {
+            window.location.href = "https://editbuddy.co.za"; // Redirect to EditBuddy website
+        }, 2000); // Adjust delay time as needed
+    </script>
+</body>
+</html>
