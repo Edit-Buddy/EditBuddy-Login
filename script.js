@@ -8,10 +8,10 @@ if (isMaintenanceMode) {
 
 // Define static user credentials
 const userDatabase = {
-    "HLMM": {
-        password: "5789",
-        securityCode: "XUIT",
-        redirectURL: "https://edit-buddy.github.io/HLMM/" // Custom redirect URL for John
+    "hlmm": {
+        password: "newpass123",
+        securityCode: "XYZZ",
+        redirectURL: "https://edit-buddy.github.io/HLMM/" // Custom redirect URL for HLMM
     },
     "jane.smith": {
         password: "abcd",
