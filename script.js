@@ -11,7 +11,7 @@ const userDatabase = {
     "hlmm": {
         password: "5692",
         securityCode: "2415",
-        redirectURL: "https://edit-buddy.github.io/HLMM/" // Custom redirect URL for HLMM
+        redirectURL: "https://edit-buddy.github.io/HLMM/" // Correct redirect URL for HLMM
     },
     "jane.smith": {
         password: "abcd",
@@ -33,45 +33,21 @@ form.addEventListener("submit", (e) => {
     const password = document.getElementById("password").value.trim();
     const securityCode = document.getElementById("security-code").value.trim();
 
-    const btn = document.querySelector('.login-btn');
-    const btnText = btn.querySelector('.btn-text');
-    const btnSpinner = btn.querySelector('.btn-spinner');
+    // Validate credentials
+    if (userDatabase[username] && userDatabase[username].password === password && userDatabase[username].securityCode === securityCode) {
+        // Successful login
+        feedbackMessage.textContent = 'Login Successful! Redirecting...';
+        feedbackMessage.classList.remove('error');
+        feedbackMessage.classList.add('success');
+        feedbackMessage.style.display = "block";
 
-    // Add the "loading" state
-    btn.disabled = true;
-    btn.classList.add('loading');
-    btnText.textContent = 'Connecting';
-    btnSpinner.classList.remove('hidden');
-
-    setTimeout(() => {
-        // Validate credentials
-        if (username in userDatabase) {
-            const user = userDatabase[username];
-            if (user.password === password && user.securityCode === securityCode) {
-                // Successful login
-                feedbackMessage.textContent = 'Login Successful! Redirecting...';
-                feedbackMessage.classList.remove('error');
-                feedbackMessage.classList.add('success');
-                feedbackMessage.style.display = "block";
-
-                setTimeout(() => {
-                    window.location.href = user.redirectURL; // Redirect to the specified URL
-                }, 2000);
-            } else {
-                // Invalid password or security code
-                errorMessage.textContent = 'Invalid username, password, or security code!';
-                errorMessage.style.display = "block";
-            }
-        } else {
-            // Invalid username
-            errorMessage.textContent = 'Invalid username, password, or security code!';
-            errorMessage.style.display = "block";
-        }
-
-        // Reset button to original state
-        btn.disabled = false;
-        btn.classList.remove('loading');
-        btnText.textContent = 'Login';
-        btnSpinner.classList.add('hidden');
-    }, 2000); // Adjust delay as needed
+        setTimeout(() => {
+            const redirectURL = userDatabase[username].redirectURL; // Get the custom redirect URL
+            window.location.href = redirectURL; // Redirect to the specified URL
+        }, 2000);
+    } else {
+        // Invalid credentials
+        errorMessage.textContent = 'Invalid username, password, or security code!';
+        errorMessage.style.display = "block";
+    }
 });
