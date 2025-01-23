@@ -10,8 +10,8 @@ if (isMaintenanceMode) {
 const userDatabase = {
     "hlmm": {
         password: "5692",
-        securityCode: "XYTA",
-        redirectURL: "https://edit-buddy.github.io/HLMM/" // Custom redirect URL for HLMM
+        securityCode: "2415",
+        redirectURL: "https://editbuddy.co.za/hlmm-dashboard" // Custom redirect URL for HLMM
     },
     "jane.smith": {
         password: "abcd",
