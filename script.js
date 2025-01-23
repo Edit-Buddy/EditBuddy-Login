@@ -8,10 +8,10 @@ if (isMaintenanceMode) {
 
 // Define static user credentials
 const userDatabase = {
-    "john.doe": {
-        password: "1234",
-        securityCode: "5678",
-        redirectURL: "https://example.com/john-dashboard" // Custom redirect URL for John
+    "HL Metal Merchants": {
+        password: "5789",
+        securityCode: "XUIT",
+        redirectURL: "https://edit-buddy.github.io/HLMM/" // Custom redirect URL for John
     },
     "jane.smith": {
         password: "abcd",
