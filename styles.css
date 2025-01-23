@@ -1,0 +1,275 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('https://i.ibb.co/HgcTPg8/Untitled-design-3.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #333;
+}
+
+/* Import Lulo Clean for Branding */
+/* Top Left Branding */
+.branding {
+    position: absolute;
+    top: 20px; /* Adjusted for more spacing */
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Increased gap for better spacing */
+}
+
+.branding .logo {
+    width: 70px; /* Enlarged logo */
+    height: auto;
+}
+
+.branding-text h1 {
+    margin: 0;
+    font-size: 2rem; /* Enlarged title */
+    font-family: Impact, sans-serif;
+    color: #000;
+    font-weight: lighter;
+    font-display: 5px;
+}
+
+.branding-text p {
+    margin: 0;
+    font-size: 0.9rem; /* Slightly larger tagline */
+    font-family: 'Lulo Clean', Arial, sans-serif;
+    color: #292929;
+}
+
+/* Login Container */
+.login-container {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    height: 76vh;
+    margin: 10% auto; /* Increased margin for more spacing */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Left Section */
+.left-section {
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.background-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Right Section */
+.right-section {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* Loader Styling */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.9); /* Light background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loader.hidden {
+    display: none; /* Hide loader when the page is loaded */
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+    font-family: 'Glacial Indifference', Arial, sans-serif;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-family: 'Glacial Indifference', Arial, sans-serif;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+/* Spinner Styling */
+.btn-spinner {
+    width: 10px; /* Smaller size */
+    height: 10px; /* Smaller size */
+    border: 2px solid transparent;
+    border-top: 2px solid #000; /* Black spinner */
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin-left: 10px; /* Space between text and spinner */
+    display: inline-block;
+}
+
+/* Button Styling During Loading */
+.login-btn.loading {
+    background-color: #000; /* Black background */
+    color: #fff; /* White text */
+    cursor: not-allowed; /* Disable pointer interaction */
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+
+/* Keyframes for Spinner */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+input:focus {
+    outline: none;
+    border-bottom: 2px solid #ffa61c; /* Bottom underline for focus */
+    box-shadow: none; /* Remove default focus shadow */
+}
+
+.forgot-password {
+    text-align: right;
+    margin-bottom: 15px;
+}
+
+.forgot-password a {
+    text-decoration: none;
+    color: #ffa61c;
+    font-size: 0.9rem;
+    font-family: 'Glacial Indifference', Arial, sans-serif;
+}
+
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+
+/* Login Button */
+/* Button Styling */
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffa61c; /* Default yellow background */
+    color: #fff; /* Default white text */
+    border: 2px solid transparent;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.login-btn:hover {
+    background-color: transparent; /* Background disappears */
+    color: #000; /* Text changes to black */
+    border: 2px solid #000; /* Black border appears */
+}
+
+/* Button Styling During Loading (Pressed State) */
+.login-btn.loading {
+    background-color: #fff; /* White background */
+    color: #000; /* Black text */
+    border: 2px solid #000; /* Black border */
+    cursor: not-allowed; /* Disable pointer interaction */
+}
+
+
+/* Mobile Branding Adjustments */
+@media (max-width: 768px) {
+    .branding {
+        position: relative; /* Move the branding inside the flow for mobile */
+        top: 0;
+        left: 0;
+        justify-content: center;
+        margin-bottom: 20px;
+        flex-direction: column; /* Stack logo and text vertically */
+    }
+
+    .branding .logo {
+        width: 80px; /* Larger logo for mobile */
+    }
+
+    .branding-text h1 {
+        font-size: 1.8rem; /* Larger title on mobile */
+        text-align: center;
+    }
+
+    .branding-text p {
+        font-size: 1rem; /* Larger tagline on mobile */
+        text-align: center;
+    }
+
+    .login-container {
+        flex-direction: column; /* Stack sections vertically */
+        height: auto;
+    }
+
+    .left-section {
+        height: 200px;
+    }
+
+    .background-image {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .right-section {
+        padding: 20px;
+    }
+}
+/* Copyright Text */
+.copyright-text {
+    margin-top: 10px; /* Space above the text */
+    text-align: center;
+    font-size: 0.8rem;
+    color: #999; /* Faded gray */
+    font-family: Arial, sans-serif;
+}
+/* Feedback Message */
+.feedback-message {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    text-align: left;
+    display: none; /* Initially hidden */
+}
+
+.feedback-message.success {
+    color: #28a745; /* Green for success */
+}
+
+.feedback-message.error {
+    color: #e63946; /* Red for error */
+}
+
+.hidden {
+    display: none; /* Utility class for hiding elements */
+}
